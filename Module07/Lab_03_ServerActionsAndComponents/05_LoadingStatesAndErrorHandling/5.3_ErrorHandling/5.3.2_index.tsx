@@ -1,0 +1,26 @@
+//...
+
+const ProductFaqs = ({
+  //...
+}: {
+  //...
+}) => {
+  //...
+
+  const getNextFaqs = async () => {
+    //...
+
+    try {
+      //...
+    } catch (err) {
+      // START MODIFIED CODE
+      const error = err instanceof Error ? err.message : String(err);
+      
+      toast.error(error);
+      // END MODIFIED CODE
+    }
+
+    //...
+  };
+
+  //...

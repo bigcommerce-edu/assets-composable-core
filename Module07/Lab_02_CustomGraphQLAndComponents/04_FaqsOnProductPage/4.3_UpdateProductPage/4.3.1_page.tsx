@@ -1,0 +1,1 @@
+import Faqs from './_components/Faqs';
