@@ -125,6 +125,31 @@ query GetCategoryTree {
 }
 ```
 
+### Query with Fragments
+
+```graphql
+query GetCategoryTree {
+  site {
+    categoryTree {
+      ... CategoryFields
+      children {
+        ... CategoryFields
+        children {
+          ... CategoryFields
+        }
+      }
+    }
+  }
+}
+
+fragment CategoryFields on CategoryTreeItem {
+    entityId
+    name
+    hasChildren
+    path
+}
+```
+
 ## Giving a Category Tree Query a Starting Point
 
 ### Root ID Query
