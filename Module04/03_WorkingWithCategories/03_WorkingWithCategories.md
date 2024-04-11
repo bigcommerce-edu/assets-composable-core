@@ -83,49 +83,23 @@ query GetCategoryProducts($categoryIds: Int!) {
 query GetCategoryTree {
   site {
     categoryTree {
-      entityId
-      name
-      hasChildren
-      path
+      ... CategoryFields
       children {
-        entityId
-        name
-        hasChildren
-        path
+        ... CategoryFields
       }
     }
   }
+}
+
+fragment CategoryFields on CategoryTreeItem {
+    entityId
+    name
+    hasChildren
+    path
 }
 ```
 
 ### Multi-level Query
-
-```graphql
-query GetCategoryTree {
-  site {
-    categoryTree {
-      entityId
-      name
-      hasChildren
-      path
-      children {
-        entityId
-        name
-        hasChildren
-        path
-        children {
-          entityId
-          name
-          hasChildren
-          path
-        }
-      }
-    }
-  }
-}
-```
-
-### Query with Fragments
 
 ```graphql
 query GetCategoryTree {

@@ -1,30 +1,50 @@
-apiToken = // v2/v3 OAuth token for store-level API account
+token = // Customer impersonation GraphQL token
 storeHash = // store hash
 channelId = // ID of headless storefront channel
 
+const registerCustomerMutation = `
+mutation RegisterCustomer(
+    $firstName: String!,
+    $lastName: String!,
+    $email: String!,
+    $password: String!
+) {
+    customer {
+        registerCustomer(
+            input: {
+                firstName: $firstName,
+                lastName: $lastName,
+                email: $email,
+                password: $password
+            }
+        ) {
+            customer {
+                entityId
+                email
+            }
+        }
+    }
+}
+`
+
 const customerData = await request.json();
-const password = customerData.password;
-delete customerData.password;
 
 const result = await fetch(
-  `https://api.bigcommerce.com/stores/${storeHash}/v3/customers`, 
+  `https://store-${storeHash}-${channelId}.mybigcommerce.com/graphql`, 
   {
     method: 'POST',
     headers: {
+      Accept: 'application/json',
       'Content-Type': 'application/json',
-      'X-Auth-Token': apiToken,
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify([{
-      ...customerData,
-      authentication: {
-        new_password: password,
-      },
-      origin_channel_id: channelId,
-      channel_ids: [channelId],
-    }])
+    body: JSON.stringify({
+      'query': createCartMutation,
+      'variables': customerData,
+    }),
   }
 ).then(res => res.json());
 
-// ... Process the result, including capturing the customer ID and initializing a session
+// ... Verify a customer ID returned in data.customer.registerCustomer.customer.entityId
 
 return {status: 'ok'};

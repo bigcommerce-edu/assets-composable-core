@@ -1,6 +1,0 @@
-//...
-
-export const getGlobalData: 
-  () => Promise<{settings: StoreSettings, navCategories: NavCategory[]}> 
-= async () => {
-  //...

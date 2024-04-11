@@ -23,11 +23,11 @@ const RegistrationComponent = () => {
         <input type="text" name="email" id="email" />
       </div>
       <div>
-        <label htmlFor="first_name">First Name</label>
+        <label htmlFor="firstName">First Name</label>
         <input type="text" name="first_name" id="first_name" />
       </div>
       <div>
-        <label htmlFor="last_name">Last Name</label>
+        <label htmlFor="lastName">Last Name</label>
         <input type="text" name="last_name" id="last_name" />
       </div>
       <div>

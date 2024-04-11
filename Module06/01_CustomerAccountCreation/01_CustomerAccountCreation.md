@@ -1,71 +1,102 @@
-# The Create Customers Endpoint
+# Registering Customers with GraphQL
 
-### Example Body
+### Example Mutation
 
-```json
-[
-  {
-    "first_name": "John",
-    "last_name": "Doe",
-    "email": "john.doe@example.com",
-    "authentication": {
-      "new_password": "secure-password"
+```graphql
+mutation RegisterCustomer(
+    $firstName: String!,
+    $lastName: String!,
+    $email: String!,
+    $password: String!
+) {
+    customer {
+        registerCustomer(
+            input: {
+                firstName: $firstName,
+                lastName: $lastName,
+                email: $email,
+                password: $password
+            }
+        ) {
+            customer {
+                entityId
+                email
+            }
+        }
     }
-  }
-]
+}
 ```
 
 ### Example Response
 
 ```json
 {
-  "data": [
-    {
-      "email": "john.doe@example.com",
-      "id": 123,
-      ...
+    "data": {
+        "customer": {
+            "registerCustomer": {
+                "customer": {
+                    "entityId": 47,
+                    "email": "john.doe@mystore.com"
+                }
+            }
+        }
     }
-  ]
 }
 ```
 
-### Example Body with Address
+### Example Detailed Mutation
 
-```json
-[
-  {
-    ...,
-    "phone": "1112223333",
-    "addresses": [
-      {
-        "first_name": "John",
-        "last_name": "Doe",
-        "address1": "123 Park Central West",
-        "address2": "Ste 3",
-        "city": "Austin", 
-        "state_or_province": "Texas",
-        "postal_code": "73301",
-        "country_code": "US",
-        "address_type": "commercial"
-      }
-    ]
-  }
-]
+```graphql
+mutation RegisterCustomer(
+    ...
+) {
+    customer {
+        registerCustomer(
+            input: {
+                ...
+                phone: "111-222-3333",
+                address: {
+                    firstName: "John",
+                    lastName: "Doe",
+                    address1: "123 Park Central East",
+                    address2: "Ste 1",
+                    city: "Austin",
+                    company: "My Store",
+                    countryCode: "US",
+                    stateOrProvince: "Texas",
+                    phone: "444-555-6666",
+                    postalCode: "78701"
+                }
+            }
+        ) {
+            customer {
+                entityId
+                email
+            }
+        }
+    }
+}
 ```
 
 # Associating Customes with the Correct Channel
 
-### Example with Channel ID
+### Example Channel Details
 
 ```json
-[
-  {
-    "email": "john.doe@example.com",
-    "origin_channel_id": 1234,
-    "channel_ids": [1234],
+{
+    "data": [
+        {
+            "id": 45,
+            ...
+            "origin_channel_id": 12345,
+            "channel_ids": [
+                1,
+                12345
+            ]
+        }
+    ],
     ...
-  }
-]
+}
 ```
 
 # A Simple Customer Registration Form
