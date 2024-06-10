@@ -65,3 +65,9 @@ query: "query GetCustomer {
   }
 }"
 ```
+
+# Other Customer Operations
+
+### Reset Password Request API Endpoint
+
+[View](./RequestPasswordReset.js)

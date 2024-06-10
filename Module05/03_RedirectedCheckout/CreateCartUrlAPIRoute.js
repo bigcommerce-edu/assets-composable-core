@@ -1,20 +1,43 @@
-const token = // Store-level v2/v3 account token
-const storeHash = // Store hash
+token = // Customer impersonation GraphQL token
+storeHash = // Store hash
+channelId = // Headless storefront channel ID
+
+const createRedirectMutation = `
+  mutation CartRedirectMutation($cartId: String!) {
+    cart {
+      createCartRedirectUrls(
+        input: { 
+          cartEntityId: $cartId 
+        }
+      ) {
+        redirectUrls {
+          redirectedCheckoutUrl
+        }
+      }
+    }
+  }
+`
 
 const cartId = cookies().get('cartId');
 
-const generateCartUrlResult = await fetch(
-  `https://api.bigcommerce.com/stores/${storeHash}/v3/carts/${cartId.value}/redirect_urls`,
+const cartRedirectResult = await fetch(
+  `https://store-${storeHash}-${channelId}.mybigcommerce.com/graphql`,
   {
-      method: 'POST',
-      headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          'X-Auth-Token': token,
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      'query': createRedirectMutation,
+      'variables': {
+        cartId,
       }
+    }),
   }
 ).then(res => res.json());
 
 return {
-  redirectUrl: generateCartUrlResult.data.checkout_url,
+  redirectUrl: cartRedirectResult.data.cart.createCartRedirectUrls.redirectedCheckoutUrl,
 };

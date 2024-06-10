@@ -1,15 +1,38 @@
 # The Redirect Process
 
+### Example Request
+
+```graphql
+mutation CartRedirectMutation($cartId: String!) {
+  cart {
+    createCartRedirectUrls(
+      input: { 
+        cartEntityId: $cartId 
+      }
+    ) {
+      redirectUrls {
+        redirectedCheckoutUrl
+        embeddedCheckoutUrl
+      }
+    }
+  }
+}
+```
+
 ### Example Response
 
 ```json
 {
   "data": {
-    "cart_url": "https://{checkout domain}/cart.php?action=load&id={cart ID}&token={token},
-    "checkout_url": "https://{checkout domain}/cart.php?action=loadInCheckout&id={cart ID}&token={token},
-    "embedded_checkout_url": "https://{checkout domain}/cart.php?embedded=1&action=loadInCheckout&id={cart ID}&token={token}"
-    },
-  "meta": {}
+    "cart": {
+      "createCartRedirectUrls": {
+        "redirectUrls": {
+          "redirectedCheckoutUrl": "https://{checkout domain}/cart.php?action=loadInCheckout&id={cart ID}&token={token}",
+          "embeddedCheckoutUrl": "https://{checkout domain}/cart.php?embedded=1&action=loadInCheckout&id={cart ID}&token={token}"
+        }
+      }
+    }
+  }
 }
 ```
 

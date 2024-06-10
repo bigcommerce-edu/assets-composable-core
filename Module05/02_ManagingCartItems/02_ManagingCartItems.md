@@ -27,7 +27,7 @@ mutation AddToCart(
 }
 ```
 
-### Add to Cart API Endpoing
+### Add to Cart API Endpoint
 
 [View](./AddToCartAPIRoute.js)
 

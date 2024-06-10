@@ -85,12 +85,6 @@ query MyQuery($categoryId: Int!) {
             "edges": [
               {
                 "node": {
-                  "entityId": 130,
-                  "sku": ""
-                }
-              },
-              {
-                "node": {
                   "entityId": 126,
                   "sku": "Shirt-1"
                 }
@@ -98,19 +92,13 @@ query MyQuery($categoryId: Int!) {
               {
                 "node": {
                   "entityId": 129,
-                  "sku": ""
+                  "sku": "Shirt-2"
                 }
               },
               {
                 "node": {
                   "entityId": 127,
-                  "sku": ""
-                }
-              },
-              {
-                "node": {
-                  "entityId": 128,
-                  "sku": ""
+                  "sku": "Shirt-3"
                 }
               }
             ]

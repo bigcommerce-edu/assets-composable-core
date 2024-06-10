@@ -300,6 +300,50 @@ site {
 }
 ```
 
+### Images Query with urlTemplate
+
+```graphql
+site {
+  product(...) {
+    defaultImage {
+      urlTemplate
+    }
+    images {
+      edges {
+        node {
+          urlTemplate
+        }
+      }
+    }
+  }
+}
+```
+
+### Example Response with urlTemplate
+
+```json
+{
+  "data": {
+    "site": {
+      "product": {
+        "defaultImage": {
+          "urlTemplate": "https://cdn11.bigcommerce.com/s-rgh8ubtn9v/images/stencil/{:size}/products/1/2/image.jpg"
+        },
+        "images": {
+          "edges": [ 
+            {
+              "node": {
+                "urlTemplate": "https://cdn11.bigcommerce.com/s-rgh8ubtn9v/images/stencil/{:size}/products/1/2/image.jpg"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
+
 ### Image Gallery Component
 
 [View](./ImageGallery.jsx)
