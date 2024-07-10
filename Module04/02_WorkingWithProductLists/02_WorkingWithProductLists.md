@@ -361,31 +361,6 @@ query MyQuery {
 }
 ```
 
-### Basic Products Query
-
-```graphql
-query MyQuery {
-  site {
-    products {
-      edges {
-        cursor
-        node {
-          entityId
-          name
-          sku
-        }
-      }
-      pageInfo {
-        startCursor
-        endCursor
-        hasNextPage
-        hasPreviousPage
-      }
-    }
-  }
-}
-```
-
 ### First/After Query
 
 ```graphql

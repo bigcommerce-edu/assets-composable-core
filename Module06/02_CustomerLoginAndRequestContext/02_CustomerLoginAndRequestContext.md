@@ -71,3 +71,7 @@ query: "query GetCustomer {
 ### Reset Password Request API Endpoint
 
 [View](./RequestPasswordReset.js)
+
+**Example URL to receive reset request:**
+
+`mystore.com/passwordreset?c={id}&t={reset token}`

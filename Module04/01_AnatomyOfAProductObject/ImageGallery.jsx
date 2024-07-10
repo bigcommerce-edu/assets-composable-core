@@ -12,7 +12,7 @@ const ProductGallery = ({ product }) => {
 
   return (
     <div>
-      {product.defaultImage?.url && (
+      {product.defaultImage?.urlOriginal && (
           <div className="mainImage">
             <a href={product.defaultImage.urlOriginal}>
               <img src={getImageUrl(product.defaultImage.urlTemplate, 800)} 

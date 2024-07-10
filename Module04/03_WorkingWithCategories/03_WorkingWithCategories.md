@@ -77,28 +77,6 @@ query GetCategoryProducts($categoryIds: Int!) {
 
 # The Category Tree
 
-### Basic Category Tree Query
-
-```graphql
-query GetCategoryTree {
-  site {
-    categoryTree {
-      ... CategoryFields
-      children {
-        ... CategoryFields
-      }
-    }
-  }
-}
-
-fragment CategoryFields on CategoryTreeItem {
-    entityId
-    name
-    hasChildren
-    path
-}
-```
-
 ### Multi-level Query
 
 ```graphql

@@ -117,7 +117,7 @@ query MyRouteQuery($myPath: String!) {
       "route": {
         "node": {
           "__typename": "Product",
-          "id": "UHJvZHVjdDoxMjY=",
+          "entityId": 28,
           "name": "Awesome Shirt"
         }
       }

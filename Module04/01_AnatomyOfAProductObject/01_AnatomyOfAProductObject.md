@@ -300,6 +300,31 @@ site {
 }
 ```
 
+### Example Response
+
+```json
+{
+  "data": {
+    "site": {
+      "product": {
+        "defaultImage": {
+          "urlTemplate": "https://cdn11.bigcommerce.com/s-rgh8ubtn9v/images/stencil/800w/products/1/2/image.jpg"
+        },
+        "images": {
+          "edges": [ 
+            {
+              "node": {
+                "urlTemplate": "https://cdn11.bigcommerce.com/s-rgh8ubtn9v/images/stencil/300w/products/1/2/image.jpg"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
+
 ### Images Query with urlTemplate
 
 ```graphql
