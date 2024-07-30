@@ -108,3 +108,5 @@ mutation RegisterCustomer(
 ### Registration API Endpoint
 
 [View](./RegistrationAPIRoute.js)
+
+[Next](../02_CustomerLoginAndRequestContext/02_CustomerLoginAndRequestContext.md)

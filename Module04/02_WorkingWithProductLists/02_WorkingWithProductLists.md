@@ -477,3 +477,5 @@ query{
 ### Paginated Featured Products Component
 
 [View](./PaginatedFeaturedProducts.jsx)
+
+[Next](../03_WorkingWithCategories/03_WorkingWithCategories.md)

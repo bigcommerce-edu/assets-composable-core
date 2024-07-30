@@ -144,3 +144,5 @@ query GetCart(
 ### Cart Component
 
 [View](./CartComponent.jsx)
+
+[Next](../02_ManagingCartItems/02_ManagingCartItems.md)

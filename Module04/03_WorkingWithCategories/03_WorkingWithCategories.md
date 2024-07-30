@@ -132,3 +132,5 @@ query RootCategory($rootCategory: Int!) {
 ### Category Nav Component
 
 [View](./CategoryNavComponent.jsx)
+
+[Next](../04_TheSearchQuery/04_TheSearchQuery.md)

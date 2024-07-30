@@ -46,3 +46,4 @@ mutation CartRedirectMutation($cartId: String!) {
 
 [View](./ProceedToCheckoutComponent.jsx)
 
+[Next](../../Module06/01_CustomerAccountCreation/01_CustomerAccountCreation.md)

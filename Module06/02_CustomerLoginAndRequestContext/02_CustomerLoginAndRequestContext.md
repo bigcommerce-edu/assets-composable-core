@@ -75,3 +75,5 @@ query: "query GetCustomer {
 **Example URL to receive reset request:**
 
 `mystore.com/passwordreset?c={id}&t={reset token}`
+
+[Next](../03_MaintainingCustomerSession/03_MaintainingCustomerSession.md)

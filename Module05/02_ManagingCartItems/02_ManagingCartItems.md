@@ -206,3 +206,5 @@ mutation DeleteCartItem(
   }
 }
 ```
+
+[Next](../03_RedirectedCheckout/03_RedirectedCheckout.md)
