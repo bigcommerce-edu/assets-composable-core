@@ -9,7 +9,10 @@ const loginData = await request.json();
 const result = // Perform GraphQL login mutation request
 
 const customerToken = jwt.sign({
-  sub: result.data.login.customer.entityId,
+  sub: JSON.stringify({
+    id: result.data.login.customer.entityId,
+    token: result.data.login.customerAccessToken.value,
+  }),
 }, secret);
 
 cookies().set('customer', customerToken, {

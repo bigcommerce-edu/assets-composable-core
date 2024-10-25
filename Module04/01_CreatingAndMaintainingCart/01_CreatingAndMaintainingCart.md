@@ -56,33 +56,30 @@ mutation CreateCart(
 ### site.cart Query
 
 ```graphql
-site {
-  cart {
-    entityId
-    baseAmount {
-      value
-    }
-    amount {
-      value
-    }
-    lineItems {
-      totalQuantity
-      physicalItems {
-        entityId
-        sku
-        quantity
-        discountedAmount {
-          value
-        }
-        couponAmount {
-          value
-        }
-        listPrice {
-          value
-        }
+query CartObject {
+  site {
+    cart {
+      baseAmount {
+        value
       }
-      digitalItems {
-        ...
+      lineItems {
+        totalQuantity
+        physicalItems {
+          entityId
+          sku
+          quantity
+          discountedAmount {
+            value
+          }
+          couponAmount {
+            value
+          }
+          listPrice {
+            value
+          }
+        }
+        digitalItems{
+          ...
       }
     }
   }

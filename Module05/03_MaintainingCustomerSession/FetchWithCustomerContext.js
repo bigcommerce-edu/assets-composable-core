@@ -12,7 +12,7 @@ let customerId = null;
 if (customerToken) {
   try {
     const customerClaim = jwt.verify(customerToken.value, secret);
-    customerId = customerClaim.sub;
+    const customer = JSON.parse(customerClaim.sub);
   } catch (err) {
     // JWT was invalid ...
   }
@@ -25,7 +25,7 @@ fetch(
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${gqlToken}`,
-      ...(customerId && { 'X-Bc-Customer-Id': customerId }),
+      ...(customer.token && { 'X-Bc-Customer-Id': customer.token }),
     },
     body: JSON.stringify({
       query: // Query
