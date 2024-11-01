@@ -1,4 +1,4 @@
-gqlToken = // Customer impersonation token
+gqlToken = // Storefront token
 storeHash = // Store hash
 channelId = // Channel ID
 

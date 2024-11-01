@@ -3,7 +3,7 @@ import * as jwt from 'jsonwebtoken';
 
 storeHash = // Store hash
 channelId = // Channel ID
-gqlToken = // Customer impersonation token
+gqlToken = // Storefront token
 secret = // Secret value
 
 const customerToken = cookies().get('customer');

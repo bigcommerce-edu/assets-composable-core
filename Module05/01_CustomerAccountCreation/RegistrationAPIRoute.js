@@ -1,4 +1,4 @@
-token = // Customer impersonation GraphQL token
+token = // Storefront token
 storeHash = // store hash
 channelId = // ID of headless storefront channel
 

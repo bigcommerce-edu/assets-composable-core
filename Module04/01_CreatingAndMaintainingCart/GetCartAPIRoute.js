@@ -1,6 +1,6 @@
 storeHash = // Store hash
 channelId = // Headless storefront channel ID
-gqlToken = // Customer impersonation GraphQL token
+gqlToken = // Storefront token
 
 const cartQuery = `
 query GetCart(
