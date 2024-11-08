@@ -25,7 +25,7 @@ fetch(
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${gqlToken}`,
-      ...(customer.token && { 'X-Bc-Customer-Id': customer.token }),
+      ...(customer.token && { 'X-Bc-Customer-Access-Token': customer.token }),
     },
     body: JSON.stringify({
       query: // Query
