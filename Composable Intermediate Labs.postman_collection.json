@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "bee380c2-344e-43ba-8da3-806c89ba4d6e",
+		"name": "Composable Intermediate Labs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5974844",
+		"_collection_link": "https://lunar-sunset-473461.postman.co/workspace/BigCommerce-Dev-EDU~4b3675d4-fdbc-4360-898f-17d425e15d10/collection/5974844-bee380c2-344e-43ba-8da3-806c89ba4d6e?action=share&source=collection_link&creator=5974844"
+	},
+	"item": [
+		{
+			"name": "Create Headless Channel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response is not an error\", () => {",
+							"    pm.response.to.not.be.error;",
+							"    pm.response.to.not.have.jsonBody(\"errors\");",
+							"});",
+							"pm.test(\"Response is JSON with data\", () => {",
+							"    pm.response.to.have.jsonBody(\"data\");",
+							"});",
+							"pm.test(\"Response includes a channel ID\", () => {",
+							"    pm.expect(pm.response.json().data?.id).to.be.a(\"number\");",
+							"});",
+							"",
+							"pm.environment.unset(\"storefront_channel_id\");",
+							"pm.environment.set(\"storefront_channel_id\", pm.response.json().data?.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{v3_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Composable Storefront Test\",\n    \"type\": \"storefront\",\n    \"platform\": \"next\",\n    \"status\": \"active\",\n    \"is_visible\": true,\n    \"is_listable_from_ui\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.bigcommerce.com/stores/{{store_hash}}/v3/channels",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bigcommerce",
+						"com"
+					],
+					"path": [
+						"stores",
+						"{{store_hash}}",
+						"v3",
+						"channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Channel Site",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{v3_token}}"
+					}
+				],
+				"url": {
+					"raw": "https://api.bigcommerce.com/stores/{{store_hash}}/v3/channels/{{storefront_channel_id}}/site",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bigcommerce",
+						"com"
+					],
+					"path": [
+						"stores",
+						"{{store_hash}}",
+						"v3",
+						"channels",
+						"{{storefront_channel_id}}",
+						"site"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Storefront Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response is not an error\", () => {",
+							"    pm.response.to.not.be.error;",
+							"    pm.response.to.not.have.jsonBody(\"errors\");",
+							"});",
+							"pm.test(\"Response is JSON with data\", () => {",
+							"    pm.response.to.have.jsonBody(\"data\");",
+							"});",
+							"pm.test(\"Response includes token\", () => {",
+							"    pm.expect(pm.response.json().data?.token).to.be.a('string');",
+							"});",
+							"",
+							"const token = pm.response.json().data?.token;",
+							"if (token) {",
+							"    pm.environment.unset(\"storefront_token\");",
+							"    pm.environment.set(\"storefront_token\", token);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "{{v3_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"channel_id\": {{storefront_channel_id}},\n    \"expires_at\": 2147483647\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.bigcommerce.com/stores/{{store_hash}}/v3/storefront/api-token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bigcommerce",
+						"com"
+					],
+					"path": [
+						"stores",
+						"{{store_hash}}",
+						"v3",
+						"storefront",
+						"api-token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "checkout_base_url",
+			"value": ""
+		}
+	]
+}
