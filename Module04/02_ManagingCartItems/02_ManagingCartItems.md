@@ -27,10 +27,6 @@ mutation AddToCart(
 }
 ```
 
-### Add to Cart API Endpoint
-
-[View](./AddToCartAPIRoute.js)
-
 # Dealing with Product Options
 
 ### Variant ID Mutation
@@ -131,27 +127,6 @@ query GetCart(
   }
 }
 ```
-
-## Example Options Implementation
-
-### Product Form Component
-
-[View](./ProductFormComponent.jsx)
-
-### Example Payload
-
-```json
-{
-  "productId": 1,
-  "multipleChoiceOptions": [
-    {"optionEntityId": 2, "optionValueEntityId": 5}
-  ]
-}
-```
-
-### Add to Cart API Endpoint with Options
-
-[View](./AddToCartAPIRouteWithOptions.js)
 
 # Updating and Deleting Cart Items
 

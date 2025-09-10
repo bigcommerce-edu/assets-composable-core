@@ -306,57 +306,6 @@ query Search($categoryId: Int!) {
   ...
 ```
 
-## Brand Page Use Case
-
-### Brand-Filtered Query
-
-```graphql
-query MyQuery($brandEntityIds: [brandId!] {
-  site {
-    search {
-      searchProducts(filters: {brandEntityIds: brandId}) {
-        filters {
-          edges {
-            node {
-              __typename
-              ... on CategorySearchFilter {
-                categories {
-                  edges {
-                    node {
-                      entityId
-                      name
-                      productCount
-                      subCategories {
-                        edges {
-                          node {
-                            entityId
-                            name
-                            productCount
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        products {
-          edges {
-            node {
-              entityId
-              name
-              sku
-            }
-          }
-        }
-      }
-    }
-  }
-}
-```
-
 ## Use Case - Search Page
 
 ### Search Term Filtered Query
@@ -414,10 +363,4 @@ query Search($term: String!) {
 }
 ```
 
-# Putting It Together
-
-### Search Results Component
-
-[View](./SearchResultsComponent.jsx)
-
-[Next](../05_Routes/05_Routes.md)
+[Next](../05_PdpRouteStrategies/05_PdpRouteStrategies.md)

@@ -43,14 +43,6 @@ mutation CreateCart(
 }
 ```
 
-### Create Cart Component
-
-[View](./CreateCartComponent.jsx)
-
-### Create Cart API Endpoint
-
-[View](./CreateCartAPIRoute.js)
-
 # Anatomy of the Cart Object
 
 ### site.cart Query
@@ -111,35 +103,5 @@ mutation AddCoupon(
   }
 }
 ```
-
-# Carts and the BigCommerce Storefront Session
-
-### Get Cart Query
-
-```graphql
-query GetCart(
-  $cartId: String
-) {
-  site {
-    cart(entityId: $cartId) {
-      ...
-    }
-  }
-}
-```
-
-# Tracking the Cart In Your Own Storefront
-
-### Create Cart API Endpoint
-
-[View](./ModifiedCreateCartAPIRoute.js)
-
-### Get Cart API Endpoint
-
-[View](./GetCartAPIRoute.js)
-
-### Cart Component
-
-[View](./CartComponent.jsx)
 
 [Next](../02_ManagingCartItems/02_ManagingCartItems.md)

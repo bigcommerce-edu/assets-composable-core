@@ -78,7 +78,7 @@ mutation RegisterCustomer(
 }
 ```
 
-# Associating Customes with the Correct Channel
+# Associating Customers with the Correct Channel
 
 ### Example Channel Details
 
@@ -99,14 +99,4 @@ mutation RegisterCustomer(
 }
 ```
 
-# A Simple Customer Registration Form
-
-### Registration Component
-
-[View](./RegistrationComponent.jsx)
-
-### Registration API Endpoint
-
-[View](./RegistrationAPIRoute.js)
-
-[Next](../02_CustomerLoginAndRequestContext/02_CustomerLoginAndRequestContext.md)
+[Next](../02_CustomerLogin/02_CustomerLogin.md)

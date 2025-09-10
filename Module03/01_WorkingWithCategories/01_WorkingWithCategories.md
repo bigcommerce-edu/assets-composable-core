@@ -1,4 +1,56 @@
-# The Category Page
+# The Category Tree
+
+### Multi-level Query
+
+```graphql
+query GetCategoryTree {
+  site {
+    categoryTree {
+      ... CategoryFields
+      children {
+        ... CategoryFields
+        children {
+          ... CategoryFields
+        }
+      }
+    }
+  }
+}
+
+fragment CategoryFields on CategoryTreeItem {
+    entityId
+    name
+    hasChildren
+    path
+}
+```
+
+## Giving a Category Tree Query a Starting Point
+
+### Root ID Query
+
+```graphql
+query RootCategory($rootCategory: Int!) {
+  site {
+    categoryTree(rootEntityId: $rootCategory) {
+      entityId
+      name
+      productCount
+      hasChildren
+      path
+      children {
+        entityId
+        name
+        productCount
+        hasChildren
+        path
+      }
+    }
+  }
+}
+```
+
+# Querying a Category
 
 ### Basic Query
 
@@ -75,62 +127,4 @@ query GetCategoryProducts($categoryIds: Int!) {
 }
 ```
 
-# The Category Tree
-
-### Multi-level Query
-
-```graphql
-query GetCategoryTree {
-  site {
-    categoryTree {
-      ... CategoryFields
-      children {
-        ... CategoryFields
-        children {
-          ... CategoryFields
-        }
-      }
-    }
-  }
-}
-
-fragment CategoryFields on CategoryTreeItem {
-    entityId
-    name
-    hasChildren
-    path
-}
-```
-
-## Giving a Category Tree Query a Starting Point
-
-### Root ID Query
-
-```graphql
-query RootCategory($rootCategory: Int!) {
-  site {
-    categoryTree(rootEntityId: $rootCategory) {
-      entityId
-      name
-      productCount
-      hasChildren
-      path
-      children {
-        entityId
-        name
-        productCount
-        hasChildren
-        path
-      }
-    }
-  }
-}
-```
-
-## A Practical categoryTree Example
-
-### Category Nav Component
-
-[View](./CategoryNavComponent.jsx)
-
-[Next](../04_TheSearchQuery/04_TheSearchQuery.md)
+[Next](../02_Routes/02_Routes.md)

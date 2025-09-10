@@ -36,14 +36,4 @@ mutation CartRedirectMutation($cartId: String!) {
 }
 ```
 
-# A Simple Example
-
-### Create Cart URL API Endpoint
-
-[View](./CreateCartUrlAPIRoute.js)
-
-### Proceed to Checkout Component
-
-[View](./ProceedToCheckoutComponent.jsx)
-
 [Next](../../Module05/01_CustomerAccountCreation/01_CustomerAccountCreation.md)
