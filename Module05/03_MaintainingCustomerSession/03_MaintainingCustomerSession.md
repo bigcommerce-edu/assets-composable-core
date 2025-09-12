@@ -1,17 +1,3 @@
-# A Simple Implementation
-
-### Login Component
-
-[View](./LoginComponent.jsx)
-
-### Login API Endpoint
-
-[View](./LoginAPIRoute.js)
-
-### Fetch with Customer Context
-
-[View](./FetchWithCustomerContext.js)
-
 # A Note on Logging Out
 
 ### Example Mutation
@@ -23,3 +9,5 @@ mutation logout {
   }
 }
 ```
+
+[Next](../05_OtherCustomerOperations/05_OtherCustomerOperations.md)
