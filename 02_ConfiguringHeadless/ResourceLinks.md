@@ -12,7 +12,7 @@
 * [Upsert a Site's Checkout URL](https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/channels/site-checkout-url/update-checkout-url)
 * [Shipping Zones](https://support.bigcommerce.com/s/article/Shipping-Zones)
 * [Shipping Methods](https://support.bigcommerce.com/s/article/Shipping-Methods)
-* [Channel Sites](https://docs.bigcommerce.com/developer/docs/rest-management/channels/channel-site)
+* [Channel Sites](https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/channels/site/get-channel-site)
 * [Site Routes](https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/sites/site-routes/get-site-routes)
 * [Third Party Reverse Proxies](https://support.bigcommerce.com/s/article/Third-Party-Reverse-Proxies)
 * [Next.js Storefront Lab Repository](https://github.com/bigcommerce-edu/lab-nextjs-storefront)
