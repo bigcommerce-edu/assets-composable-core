@@ -2,10 +2,10 @@
 
 * [Introduction to Headless Commerce](https://docs.bigcommerce.com/developer/docs/storefront/headless)
 * [GraphQL Storefront API Overview](https://docs.bigcommerce.com/developer/docs/storefront/graphql)
-* [Payments API](https://docs.bigcommerce.com/developer/docs/store-operations/payments)
-* [BigCommerce Developer Release Notes](https://docs.bigcommerce.com/developer/release-notes)
+* [Payments API](https://docs.bigcommerce.com/developer/docs/admin/checkout-and-cart/payments/overview)
+* [BigCommerce Developer Release Notes](https://docs.bigcommerce.com/developer/changelog)
 * [Create a GraphQL Token](https://docs.bigcommerce.com/developer/docs/rest-authentication/tokens#create-a-token)
-* [Customer Access Token](https://docs.bigcommerce.com/developer/docs/start/authentication/graphql-storefront#customer-access-tokens)
+* [Customer Access Token](https://docs.bigcommerce.com/developer/docs/storefront/guides/customer-authentication/customer-login)
 * [Next.js](https://nextjs.org/)
 * [Nuxt](https://nuxt.com/)
 * [Catalyst Documentation](https://docs.bigcommerce.com/developer/docs/storefront/catalyst)
