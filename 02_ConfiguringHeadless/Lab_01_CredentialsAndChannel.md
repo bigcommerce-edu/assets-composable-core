@@ -8,7 +8,7 @@ The credentials you generate in this lab will be needed for future labs, so make
 
 ### Prerequisites
 
-* A BigCommerce [sandbox store](https://developer.bigcommerce.com/docs/start/about/sandboxes) or [trial store](https://www.bigcommerce.com/essentials/), or a full production store, with an available slot for a new storefront channel
+* A BigCommerce [sandbox store](https://docs.bigcommerce.com/developer/docs/start/about/sandboxes) or [trial store](https://www.bigcommerce.com/essentials/), or a full production store, with an available slot for a new storefront channel
 * [Postman](https://www.postman.com/) or a similar API client
 
 ### In this lab, you will:
