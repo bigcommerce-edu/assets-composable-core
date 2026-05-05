@@ -38,10 +38,12 @@ mutation Login($email: String!, $pass: String!) {
 
 ### Headers
 
+> **Note:** The Bearer token in the `Authorization` header differs by context. In a client-side context, use the standard storefront token. In a server-side context (such as a Next.js server component), use the private storefront token.
+
 ```
 Accept: "application/json"
 Content-Type: "application/json"
-Authorization: "Bearer {storefront token}"
+Authorization: "Bearer {private storefront token}"
 X-Bc-Customer-Access-Token: {Customer access token}
 ```
 

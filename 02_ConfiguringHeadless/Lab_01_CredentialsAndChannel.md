@@ -93,16 +93,18 @@ In a full build, once you have a public domain and a strategy for checkout domai
 * Update a Channel Site
 * Upsert a Site's Checkout URL
 
-## Create a GraphQL Storefront Token
+## Create a Private Storefront Token
 
-The V2/V3 API token you've used so far will be relevant for a few more operations, but your storefront application's primary interactions with BigCommerce will require a GraphQL Storefront token. You'll create this token now and store it for subsequent labs.
+> **Note:** Private Storefront Tokens are a newer option for server-side GraphQL Storefront API access. Unlike the standard storefront token, a private token does not require allowed CORS origins and should only be used in secure server-side environments.
 
-1. **Run** the "Create Storefront Token" request.
+The V2/V3 API token you've used so far will be relevant for a few more operations, but your storefront application's primary interactions with BigCommerce will require a Private Storefront token. You'll create this token now and store it for subsequent labs.
+
+1. **Run** the "Create Private Token" request.
 2. **Verify** that all tests pass.
 
 Remember that you can also use a dynamic value for `expires_at`, by including a Pre-request Script to calculate a timestamp and store it as an environment or collection variable.
 
-3. **Verify** that the `storefront_token` variable is populated in your environment variables list. This is the token you will need for subsequent labs.
+3. **Verify** that the `private_storefront_token` variable is populated in your environment variables list. This is the token you will need for subsequent labs.
 
 
 ## Assign Catalog Data
