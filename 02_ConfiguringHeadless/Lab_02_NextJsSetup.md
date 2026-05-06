@@ -25,7 +25,7 @@ You will need the following prerequisites generated or collected in previous lab
 
 * Your BigCommerce store hash
 * The ID of your headless channel
-* A Storefront Token for authentication with the GraphQL Storefront API
+* A Private Storefront Token for server-side authentication with the GraphQL Storefront API
 
 ## Setup
 
@@ -53,7 +53,7 @@ In some environments where file permissions are highly restricted, you may need 
 |---|---|
 | BIGCOMMERCE_STORE_HASH | Your store hash |
 | BIGCOMMERCE_CHANNEL_ID | Your headless channel ID |
-| BIGCOMMERCE_STOREFRONT_TOKEN | Your storefront token |
+| BIGCOMMERCE_PRIVATE_STOREFRONT_TOKEN | Your private storefront token |
 
 5. **Start** the dev server process:
 

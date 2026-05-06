@@ -208,7 +208,7 @@
 			"response": []
 		},
 		{
-			"name": "Create Storefront Token",
+			"name": "Create Private Token",
 			"event": [
 				{
 					"listen": "test",
@@ -227,8 +227,8 @@
 							"",
 							"const token = pm.response.json().data?.token;",
 							"if (token) {",
-							"    pm.environment.unset(\"storefront_token\");",
-							"    pm.environment.set(\"storefront_token\", token);",
+							"    pm.environment.unset(\"private_storefront_token\");",
+							"    pm.environment.set(\"private_storefront_token\", token);",
 							"}"
 						],
 						"type": "text/javascript",
@@ -268,7 +268,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://api.bigcommerce.com/stores/{{store_hash}}/v3/storefront/api-token",
+					"raw": "https://api.bigcommerce.com/stores/{{store_hash}}/v3/storefront/api-token-customer-impersonation",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -280,7 +280,7 @@
 						"{{store_hash}}",
 						"v3",
 						"storefront",
-						"api-token"
+						"api-token-customer-impersonation"
 					]
 				}
 			},
